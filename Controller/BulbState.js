@@ -19,7 +19,7 @@ device.on('connect', function () {
 //   });
 
 exports.getBulbControls = (req, res, next) => {
-   let currentState = 0
+   let currentState = 1
    device.on('message', function (topic, payload) {
          console.log('message on ', topic, payload.toString());
          currentState = payload.toString()
