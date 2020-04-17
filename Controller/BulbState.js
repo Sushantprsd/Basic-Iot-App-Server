@@ -24,7 +24,6 @@ exports.getBulbControls = (req, res, next) => {
          console.log('message on ', topic, payload.toString());
          currentState = payload.toString()
       });
-   device.publish('test/led/1', JSON.stringify(0));
    res.status(200).json({
       "Current State": currentState
    })
