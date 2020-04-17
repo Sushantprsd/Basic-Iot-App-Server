@@ -32,6 +32,7 @@ exports.getBulbControls = (req, res, next) => {
 
 exports.postBulbControls = (req, res, next) => {
    const value = req.body.value;
+   console.log(value)
    let currentState = "OFF"
    if(JSON.stringify(value) === "1"){
       currentState = "ON"
