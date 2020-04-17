@@ -1,0 +1,17 @@
+{
+  "name": "cec13-iotappserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.4",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  }
+}
