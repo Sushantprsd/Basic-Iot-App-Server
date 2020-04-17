@@ -39,6 +39,7 @@ exports.postBulbControls = (req, res, next) => {
    }
    device.publish('test/led/1', JSON.stringify(value));
    res.status(201).json({
+      "value":value,
       "Current State": currentState
    })
 }
