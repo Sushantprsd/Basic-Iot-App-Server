@@ -36,7 +36,7 @@ exports.getBulbControls = (req, res, next) => {
          if (!result) {
             return 0
          } else {
-
+            device.publish('test/led/1/success', JSON.stringify(result[0].currentState));
             return result[0].currentState
          }
 
