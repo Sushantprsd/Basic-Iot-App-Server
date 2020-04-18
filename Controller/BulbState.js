@@ -22,7 +22,7 @@ device.on('connect', function () {
 //   });
 
 exports.getBulbControls = (req, res, next) => {
- 
+
    // device.on('message', function (topic, payload) {
    //    console.log('message on ', topic, payload.toString());
    //    currentState = payload.toString()
@@ -36,24 +36,19 @@ exports.getBulbControls = (req, res, next) => {
          if (!result) {
             return 0
          } else {
-            
+
             return result[0].currentState
          }
 
       })
-      .then(state=>{
+      .then(state => {
          res.status(200).json({
-            "Current State": state
+            "CurrentState": state
          })
       })
       .catch(err => {
          console.log(err)
       })
-
-
-
-
-
 }
 
 exports.postBulbControls = (req, res, next) => {
@@ -87,6 +82,6 @@ exports.postBulbControls = (req, res, next) => {
       })
    res.status(201).json({
       "value": value,
-      "Current State": currentState
+      "CurrentState": currentState
    })
 }
