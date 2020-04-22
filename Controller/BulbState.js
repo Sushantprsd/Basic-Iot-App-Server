@@ -16,20 +16,7 @@ device.on('connect', function () {
    device.subscribe('test/led/1');
 });
 
-// device
-//   .on('message', function(topic, payload) {
-//     console.log('message', topic, payload.toString());
-//   });
-
 exports.getBulbControls = (req, res, next) => {
-
-   // device.on('message', function (topic, payload) {
-   //    console.log('message on ', topic, payload.toString());
-   //    currentState = payload.toString()
-   // });
-   // device.publish('test/led/1', JSON.stringify(0));
-
-
    BulbState.find()
       .then(result => {
          console.log(result[0].currentState)
@@ -59,10 +46,7 @@ exports.postBulbControls = (req, res, next) => {
    if (JSON.stringify(value) === "1") {
       currentState = "ON"
    }
-
    device.publish('test/led/1', JSON.stringify(value));
-
-
    BulbState.find()
       .then(result => {
          if (!result) {
